@@ -1,0 +1,15 @@
+STUDENT GRADES REPORT
+=====================
+Total students: 0
+Average grade: 0.00
+Pass rate: 0.00
+Best student: null
+Worst student: null
+
+Top 3 students:
+
+Grade distribution:
+
+Passed students:
+
+Failed students:

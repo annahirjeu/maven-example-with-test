@@ -16,30 +16,29 @@ import java.util.Map;
  * @since 6/22/2026
  */
 public class ReportWriter {
-    public void writeReport(String filePath, List<Student> students) {
-        StudentService studentService = new StudentService();
+    public void writeReport(String filePath, ReportData reportData) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
             writer.write("STUDENT GRADES REPORT\n");
             writer.write("=====================\n");
-            writer.write("Total students: " + students.size() + "\n");
-            writer.write("Average grade: " + String.format("%.2f", studentService.calculateAverageGrade(students)) + "\n");
-            writer.write("Pass rate: " + String.format("%.2f", studentService.calculatePassRate(students)) + "\n");
-            writer.write("Best student: " + studentService.findBestStudent(students).orElse(null) + "\n");
-            writer.write("Worst student: " + studentService.findWorstStudent(students).orElse(null) + "\n");
+            writer.write("Total students: " + reportData.totalStudents() + "\n");
+            writer.write("Average grade: " + String.format("%.2f", reportData.averageGrade()) + "\n");
+            writer.write("Pass rate: " + String.format("%.2f", reportData.passRate()) + "\n");
+            writer.write("Best student: " + reportData.bestStudent() + "\n");
+            writer.write("Worst student: " + reportData.worstStudent() + "\n");
             writer.write("\nTop 3 students:\n");
-            for (Student student : studentService.getTopStudents(students, 3)) {
+            for (StudentPerformance student : reportData.topStudents()) {
                 writer.write(student.toString() + "\n");
             }
             writer.write("\nGrade distribution:\n");
-            for (Map.Entry<Double, Long> entry : studentService.getGradeDistribution(students).entrySet()) {
+            for (Map.Entry<Double, Long> entry : reportData.gradeDistribution().entrySet()) {
                 writer.write("Grade " + entry.getKey() + ": " + entry.getValue() + " student(s)\n");
             }
             writer.write("\nPassed students:\n");
-            for (Student student : studentService.getPassedStudents(students)) {
+            for (StudentPerformance student : reportData.passedStudents()) {
                 writer.write(student.toString() + "\n");
             }
             writer.write("\nFailed students:\n");
-            for (Student student : studentService.getFailedStudents(students)) {
+            for (StudentPerformance student : reportData.failedStudents()) {
                 writer.write(student.toString() + "\n");
             }
 

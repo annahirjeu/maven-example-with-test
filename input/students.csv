@@ -1,11 +1,13 @@
-id,name,grade
-1,Ana,9.5
-2,Ion,8.5
-3,Gheorghe,6.4
-4,Vasile,4.5
-5,Olga,6.7
-6,Iurie,8
-7,Maria,9.8
-8,Alina,10
-9,Camelia,10
-10,Gloria,9.5
+student_id,student_name,email,group_name,course_code,course_name,teacher_name,exam_type,grade,exam_date
+1,Ana Popescu,ana@mail.com,Java-01,DB101,Databases,Mihai Lupu,TEST,1.7,2026-06-22
+2,Ion Ceban,ion@mail.com,Java-01,JAVA101,Java Fundamentals,Irina Rusu,FINAL,7.8,2026-06-20
+1,Ana Popescu,ana1@mail.com,Excel,EX101,Excel,Laura,TEST,8.7,2026-06-22
+1,Ana Popescu,ana1@mail.com,Java-01,DB101,Databases,Mihai Lupu,TEST,8.7,2026-06-22
+1,Ana Popescu,ana1@mail.com,Java-01,DB101,Databases,Mihai Lupu,TEST,7.7,2026-06-22
+1,Ana Popescu,ana1@mail.com,Java-01,DB101,Databases,Mihai Lupu,TEST,8.7,2026-06-22
+1,Ana Popescu,ana1@mail.com,Java-01,DB101,Databases,Mihai Lupu,TEST,1.7,2026-06-22
+1,Ana Popescu,ana1@mail.com,Java-01,DB101,Databases,Mihai Lupu,TEST,1.7,2026-06-22
+2,Ion Ceban,ion@mail.com,Excel,EX101,Excel, Laura,FINAL,7.8,2026-06-20
+2,Ion Ceban,ion@mail.com,Java-01,JAVA101,Java Fundamentals,Irina Rusu,FINAL,7.8,2026-06-20
+2,Ion Ceban,ion@mail.com,Java-01,JAVA101,Java Fundamentals,Irina Rusu,FINAL,7.8,2026-06-20
+2,Ion Ceban,ion@mail.com,Java-01,JAVA101,Java Fundamentals,Irina Rusu,FINAL,7.8,2026-06-20

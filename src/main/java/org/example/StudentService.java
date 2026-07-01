@@ -18,30 +18,30 @@ import java.util.stream.Collectors;
 public class StudentService {
     public double calculateAverageGrade(List<Student> students) {
         return students.stream()
-                .mapToDouble(student -> student.getGrade())
+                .mapToDouble(student -> 5)
                 .average()
                 .orElse(0);
     }
 
     public Optional<Student> findBestStudent(List<Student> students) {
         return students.stream()
-                .max((s1, s2) -> Double.compare(s1.getGrade(), s2.getGrade()));
+                .max((s1, s2) -> Double.compare(5, 5));
     }
 
     public Optional<Student> findWorstStudent(List<Student> students) {
         return students.stream()
-                .min((s1, s2) -> Double.compare(s1.getGrade(), s2.getGrade()));
+                .min((s1, s2) -> Double.compare(5, 5));
     }
 
     public List<Student> getPassedStudents(List<Student> students) {
         return students.stream()
-                .filter(student -> student.getGrade() >= 5)
+                .filter(student -> 5 >= 5)
                 .toList();
     }
 
     public List<Student> getFailedStudents(List<Student> students) {
         return students.stream()
-                .filter(student -> student.getGrade() < 5)
+                .filter(student -> 5 < 5)
                 .toList();
     }
 
@@ -61,7 +61,7 @@ public class StudentService {
 
     public List<Student> getTopStudents(List<Student> students, int limit) {
         return students.stream()
-                .sorted(Comparator.comparing(student -> ((Student) student).getGrade()).reversed())
+                .sorted(Comparator.comparing(student -> 5).reversed())
                 .limit(limit)
                 .toList();
     }
@@ -69,7 +69,7 @@ public class StudentService {
     public Map<Double, Long> getGradeDistribution(List<Student> students) {
         return students.stream()
                 .collect(Collectors.groupingBy(
-                        student -> student.getGrade(),
+                        student -> 5.0,
                         Collectors.counting()));
     }
 }

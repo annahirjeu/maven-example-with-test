@@ -1,36 +1,26 @@
 STUDENT GRADES REPORT
 =====================
-Total students: 10
-Average grade: 8.290000000000001
-Pass rate: 90.0
-Best student: Student{id=8, name='Alina', grade=10.0}
-Worst student: Student{id=4, name='Vasile', grade=4.5}
+Total students: 2
+Average grade: 8.08
+Pass rate: 100.00
+Best student: StudentPerformance[studentId=2, studentName=Ion Ceban, grade=7.8]
+Worst student: StudentPerformance[studentId=1, studentName=Ana Popescu, grade=6.24]
 
 Top 3 students:
-Student{id=8, name='Alina', grade=10.0}
-Student{id=9, name='Camelia', grade=10.0}
-Student{id=7, name='Maria', grade=9.8}
+StudentPerformance[studentId=2, studentName=Ion Ceban, grade=7.8]
+StudentPerformance[studentId=1, studentName=Ana Popescu, grade=6.24]
 
 Grade distribution:
-Grade 8.0: 1 student(s)
-Grade 8.5: 1 student(s)
-Grade 4.5: 1 student(s)
-Grade 6.4: 1 student(s)
-Grade 9.5: 2 student(s)
-Grade 10.0: 2 student(s)
-Grade 6.7: 1 student(s)
-Grade 9.8: 1 student(s)
+Grade 7.7: 1 student(s)
+Grade 9.5: 1 student(s)
+Grade 8.7: 3 student(s)
+Grade 1.7: 3 student(s)
+Grade 7.8: 7 student(s)
 
 Passed students:
-Student{id=1, name='Ana', grade=9.5}
-Student{id=2, name='Ion', grade=8.5}
-Student{id=3, name='Gheorghe', grade=6.4}
-Student{id=5, name='Olga', grade=6.7}
-Student{id=6, name='Iurie', grade=8.0}
-Student{id=7, name='Maria', grade=9.8}
-Student{id=8, name='Alina', grade=10.0}
-Student{id=9, name='Camelia', grade=10.0}
-Student{id=10, name='Gloria', grade=9.5}
+StudentPerformance[studentId=2, studentName=Ion Ceban, grade=7.8]
+StudentPerformance[studentId=1, studentName=Ana Popescu, grade=6.24]
 
 Failed students:
-Student{id=4, name='Vasile', grade=4.5}
+StudentPerformance[studentId=1, studentName=Ana Popescu, grade=6.24]
+StudentPerformance[studentId=2, studentName=Ion Ceban, grade=7.8]

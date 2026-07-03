@@ -113,4 +113,6 @@ public class ExamResultRepository {
             throw new RuntimeException("Failed to get grade distribution", e);
         }
     }
+
+
 }

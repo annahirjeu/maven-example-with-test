@@ -3,7 +3,7 @@
 //*************************************************//
 
 import org.example.Student;
-import org.example.StudentService;
+import org.example.service.StudentService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

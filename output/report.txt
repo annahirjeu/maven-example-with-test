@@ -1,26 +1,25 @@
 STUDENT GRADES REPORT
 =====================
 Total students: 2
-Average grade: 8.08
+Average grade: 7.80
 Pass rate: 100.00
 Best student: StudentPerformance[studentId=2, studentName=Ion Ceban, grade=7.8]
-Worst student: StudentPerformance[studentId=1, studentName=Ana Popescu, grade=6.24]
+Worst student: StudentPerformance[studentId=1, studentName=Ana Popescu, grade=5.56]
 
 Top 3 students:
 StudentPerformance[studentId=2, studentName=Ion Ceban, grade=7.8]
-StudentPerformance[studentId=1, studentName=Ana Popescu, grade=6.24]
+StudentPerformance[studentId=1, studentName=Ana Popescu, grade=5.56]
 
 Grade distribution:
-Grade 7.7: 1 student(s)
-Grade 9.5: 1 student(s)
-Grade 8.7: 3 student(s)
-Grade 1.7: 3 student(s)
-Grade 7.8: 7 student(s)
+Grade 7.7: 4 student(s)
+Grade 8.7: 12 student(s)
+Grade 1.7: 12 student(s)
+Grade 7.8: 20 student(s)
 
 Passed students:
 StudentPerformance[studentId=2, studentName=Ion Ceban, grade=7.8]
-StudentPerformance[studentId=1, studentName=Ana Popescu, grade=6.24]
+StudentPerformance[studentId=1, studentName=Ana Popescu, grade=5.56]
 
 Failed students:
-StudentPerformance[studentId=1, studentName=Ana Popescu, grade=6.24]
+StudentPerformance[studentId=1, studentName=Ana Popescu, grade=5.56]
 StudentPerformance[studentId=2, studentName=Ion Ceban, grade=7.8]

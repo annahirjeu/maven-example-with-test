@@ -2,8 +2,16 @@
 //          INTHER LOGISTICS ENGINEERING           //
 //*************************************************//
 
-package org.example;
+package org.example.service;
 
+import org.example.*;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
+
+import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
@@ -15,7 +23,14 @@ import java.util.stream.Collectors;
  * @author aminoiu
  * @since 6/19/2026
  */
+@Component
 public class StudentService {
+    @Value("${students.csv.file.path}")
+    public String csvFilePath;
+
+    @Value("${students.report.file.path}")
+    public String reportFilePath;
+
     public double calculateAverageGrade(List<Student> students) {
         return students.stream()
                 .mapToDouble(student -> 5)
@@ -71,5 +86,30 @@ public class StudentService {
                 .collect(Collectors.groupingBy(
                         student -> 5.0,
                         Collectors.counting()));
+    }
+
+    public void processCsvWithStudents(int courseId, String examType, int topStudentsLimit) throws SQLException {
+        try (Connection connection = DatabaseConnection.getDatabaseConnection()) {
+            StudentCsvReader csvReader = new StudentCsvReader();
+            CsvImportService csvImportService = new CsvImportService(connection);
+            List<CSVExamRecord> records = csvReader.readStudentsFromCsv(csvFilePath);
+            csvImportService.importRecord(records);
+
+        }
+
+        ReportWriter reportWriter = new ReportWriter();
+        ReportService reportService = new ReportService();
+        ReportData reportData = reportService.buildReportData(topStudentsLimit, courseId, examType);
+        reportWriter.writeReport(reportFilePath, reportData);
+    }
+
+    public List<Student> getStudents() {
+        try (Connection connection = DatabaseConnection.getDatabaseConnection()) {
+            StudentRepository studentRepository = new StudentRepository(connection);
+            return studentRepository.getAllStudents();
+        } catch (SQLException e) {
+            throw new RuntimeException("Failed to retrieve students from the database", e);
+        }
+
     }
 }

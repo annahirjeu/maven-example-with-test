@@ -8,6 +8,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
 /**
  *
@@ -97,5 +98,26 @@ public class StudentRepository {
             throw new RuntimeException("Failed to get total students", e);
         }
         return 0;
+    }
+
+    public List<Student> getAllStudents() {
+        String sql = "SELECT * FROM students";
+        try (PreparedStatement statement = connection.prepareStatement(sql)) {
+            try (ResultSet result = statement.executeQuery()) {
+                List<Student> students = new java.util.ArrayList<>();
+                while (result.next()) {
+                    Student student = new Student(
+                            result.getInt("id"),
+                            result.getString("name"),
+                            result.getString("email"),
+                            result.getInt("group_id")
+                    );
+                    students.add(student);
+                }
+                return students;
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException("Failed to get all students", e);
+        }
     }
 }
